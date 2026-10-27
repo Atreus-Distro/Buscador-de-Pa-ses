@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 0;
+
+  /* Imágenes de fondo */
+  background-image:
+    url("https://cdn-icons-png.flaticon.com/512/814/814513.png"),
+    url("https://cdn-icons-png.flaticon.com/512/3448/3448507.png"),
+    linear-gradient(135deg, #172554 0%, #312e81 100%);
+
+  background-repeat: no-repeat, no-repeat, no-repeat;
+
+  background-position:
+    right 5% top 20%,
+    center bottom 0%,
+    center center;
+
+  background-size: 250px, 400px, cover;
+
+  background-attachment: fixed;
+}
+
+/* Título principal */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Input de búsqueda */
+#search {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #4f46e5;
+  background-color: #1e1b4b;
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s;
+}
+
+#search:focus {
+  border-color: #818cf8;
+}
+
+#search::placeholder {
+  color: #9ca3af;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  z-index: 10; /* Para que las tarjetas queden por encima de las imágenes */
+}
+
+/* Tarjetas pequeñas (2 a 10 países) */
+.tarjeta-pais {
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.tarjeta-pais:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta-pais img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.tarjeta-pais h2 {
+  padding: 1rem;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Tarjeta grande (1 solo país) */
+.detalle-pais {
+  display: flex;
+  flex-direction: column;
+  background-color: #1e293b;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 10;
+}
+
+.detalle-pais img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.info-pais {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-pais h2 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  color: #818cf8;
+  margin-bottom: 1.5rem;
+}
+
+.info-pais p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.8rem;
+  color: #e2e8f0;
+}
+
+.info-pais p strong {
+  color: #94a3b8;
+}
+
+/* Clima */
+#clima {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  border-bottom: none;
+  background-color: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Mensaje de demasiados países */
+.mensaje {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* Responsive para computadoras (Pantalla partida) */
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .detalle-pais {
+    flex-direction: row;
+  }
+
+  .detalle-pais img {
+    width: 50%;
+    height: auto;
+  }
+
+  .info-pais {
+    width: 50%;
+    padding: 3rem;
+  }
+}
